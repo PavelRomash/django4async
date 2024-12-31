@@ -21,8 +21,9 @@ from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
-    
+    path('course/', include('courses.urls')),
     path('accounts/', include('registration.urls')),
+    
     
     path('admin/', admin.site.urls),
     
@@ -31,4 +32,4 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
-    document_root=settings.MEDIA_ROOT)
+    document_root = settings.MEDIA_ROOT)
